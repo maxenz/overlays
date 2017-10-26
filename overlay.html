@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>HTML body tag</title>
+
+<style>
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    top: 60px;
+    left: 270px;
+    right: 0;
+    overflow: hidden;
+    width: 100px;
+    transition: .5s ease;
+    height: 0;
+}
+
+.hoverOverlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#wallImage {
+
+width:100px;
+height:300px;
+
+}
+</style>
+
+
+<script src="jquery-3.2.1.min.js"></script>
+
+</head>
+<body>
+
+
+<h2>Slide in Overlay from the Top</h2>
+<p>Hover over the image to see the effect.</p>
+
+<div class="container">
+  <img src="room.jpg" alt="Avatar" class="image">
+  <div class="overlay">
+      <img src="wall.jpg" id="wallImage" />
+  </div>
+</div>
+
+<input type="button" value="mostrar" id="mostrar" />
+
+<script>
+
+$('#mostrar').on('click', function() {
+	$('.overlay').toggleClass('hoverOverlay');
+});
+
+</script>
+
+</body>
+</html>
